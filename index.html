@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurelio Ramadhan — Full-Stack Developer & Achiever</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a}
+    ::-webkit-scrollbar{width:6px}
+    ::-webkit-scrollbar-track{background:#fafafa}
+    ::-webkit-scrollbar-thumb{background:#d4d4d4;border-radius:3px}
+    ::-webkit-scrollbar-thumb:hover{background:#a3a3a3}
+
+    .fade-up{opacity:0;transform:translateY(50px);transition:all .9s cubic-bezier(.16,1,.3,1)}
+    .fade-up.visible{opacity:1;transform:translateY(0)}
+    .fade-left{opacity:0;transform:translateX(-50px);transition:all .9s cubic-bezier(.16,1,.3,1)}
+    .fade-left.visible{opacity:1;transform:translateX(0)}
+    .fade-right{opacity:0;transform:translateX(50px);transition:all .9s cubic-bezier(.16,1,.3,1)}
+    .fade-right.visible{opacity:1;transform:translateX(0)}
+    .scale-in{opacity:0;transform:scale(.9);transition:all .7s cubic-bezier(.16,1,.3,1)}
+    .scale-in.visible{opacity:1;transform:scale(1)}
+
+    .nav-link{position:relative;color:#737373;transition:color .3s}
+    .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#1a1a1a;transition:width .3s;border-radius:1px}
+    .nav-link:hover{color:#1a1a1a}
+    .nav-link:hover::after{width:100%}
+
+    .section-label{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#a3a3a3}
+
+    .skill-bar{height:6px;background:#f0f0f0;border-radius:3px;overflow:hidden}
+    .skill-fill{height:100%;border-radius:3px;width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
+
+    .project-card{background:#fafafa;border:1px solid #f0f0f0;border-radius:20px;overflow:hidden;transition:all .5s cubic-bezier(.16,1,.3,1);cursor:pointer}
+    .project-card:hover{border-color:#e5e5e5;box-shadow:0 20px 60px rgba(0,0,0,.07);transform:translateY(-8px)}
+    .project-card:hover .project-img{transform:scale(1.05)}
+    .project-img{transition:transform .7s cubic-bezier(.16,1,.3,1)}
+
+    .achievement-card{background:#fafafa;border:1px solid #f0f0f0;border-radius:20px;overflow:hidden;transition:all .5s cubic-bezier(.16,1,.3,1)}
+    .achievement-card:hover{border-color:#e5e5e5;box-shadow:0 20px 60px rgba(0,0,0,.07);transform:translateY(-6px)}
+    .achievement-card:hover img{transform:scale(1.06)}
+    .achievement-card img{transition:transform .7s cubic-bezier(.16,1,.3,1)}
+
+    .tech-tag{display:inline-flex;align-items:center;padding:4px 12px;background:#f5f5f5;border-radius:6px;font-size:11px;font-family:'JetBrains Mono',monospace;color:#737373;font-weight:500}
+
+    .rank-gold{background:#fffbeb;color:#92400e;border:1px solid #fde68a}
+    .rank-silver{background:#f8fafc;color:#475569;border:1px solid #e2e8f0}
+    .rank-bronze{background:#fff7ed;color:#9a3412;border:1px solid #fed7aa}
+
+    .stat-card{background:#fafafa;border:1px solid #f0f0f0;border-radius:16px;padding:28px;text-align:center;transition:all .3s ease}
+    .stat-card:hover{background:#fff;border-color:#e5e5e5;box-shadow:0 8px 30px rgba(0,0,0,.05);transform:translateY(-4px)}
+
+    .mobile-menu{position:fixed;inset:0;z-index:90;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity .3s ease}
+    .mobile-menu.active{opacity:1;pointer-events:all}
+    .mobile-menu a{font-size:24px;font-weight:500;color:#1a1a1a;transition:opacity .3s}
+    .mobile-menu a:hover{opacity:.6}
+
+    .terminal-cursor{display:inline-block;width:2px;height:18px;background:#22c55e;margin-left:2px;vertical-align:text-bottom;animation:blink 1s step-end infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+    .glow-line{height:1px;background:linear-gradient(to right,transparent,#e5e5e5,transparent)}
+    .profile-frame{position:relative;border-radius:24px;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.04);}
+    .profile-frame img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.16,1,.3,1);}
+    .profile-frame:hover img{transform:scale(1.03)}
+    .profile-float-badge{position:absolute;background:#fff;border-radius:14px;padding:10px 16px;box-shadow:0 8px 24px rgba(0,0,0,.08);display:flex;align-items:center;gap:10px;border:1px solid #f5f5f5;}
+    .profile-code-tag{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.6),transparent);padding:40px 20px 16px;}
+    .project-modal-overlay{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;align-items:center;justify-content:center;padding:24px;}
+    .project-modal-overlay.active{opacity:1;pointer-events:all}
+    .project-modal{background:#fff;border-radius:24px;max-width:900px;width:100%;max-height:90vh;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.2);transform:translateY(30px) scale(.97);transition:transform .4s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;}
+    .project-modal-overlay.active .project-modal{transform:translateY(0) scale(1)}
+    .modal-scroll{overflow-y:auto;flex:1}
+    .modal-gallery-thumb{width:72px;height:72px;border-radius:10px;overflow:hidden;border:2px solid transparent;cursor:pointer;transition:all .3s ease;flex-shrink:0;}
+    .modal-gallery-thumb.active{border-color:#1a1a1a}
+    .feature-check{display:flex;align-items:start;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f5}
+  </style>
+</head>
+<body>
+
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-neutral-100">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 text-lg font-semibold tracking-tight text-neutral-900"><span class="font-mono text-sm text-neutral-400">&lt;</span>Aurelio<span class="font-mono text-sm text-neutral-400">/&gt;</span></a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about" class="nav-link text-sm">About</a>
+        <a href="#projects" class="nav-link text-sm">Projects</a>
+        <a href="#prestasi" class="nav-link text-sm">Prestasi</a>
+        <a href="#experience" class="nav-link text-sm">Experience</a>
+        <a href="#contact" class="nav-link text-sm">Contact</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-neutral-900"><iconify-icon icon="lucide:menu" width="24"></iconify-icon></button>
+    </div>
+  </nav>
+
+  <div id="mobileMenu" class="mobile-menu">
+    <button id="closeMenu" class="absolute top-5 right-6 text-neutral-900"><iconify-icon icon="lucide:x" width="28"></iconify-icon></button>
+    <a href="#about" onclick="closeMobile()">About</a><a href="#projects" onclick="closeMobile()">Projects</a><a href="#prestasi" onclick="closeMobile()">Prestasi</a><a href="#experience" onclick="closeMobile()">Experience</a><a href="#contact" onclick="closeMobile()">Contact</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center relative px-6 overflow-hidden">
+    <div class="absolute inset-0" style="background-image:radial-gradient(#f0f0f0 1px,transparent 1px);background-size:32px 32px;opacity:.6"></div>
+    <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center relative z-10">
+      <div class="fade-up">
+        <div class="section-label mb-6 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>Available for opportunities</div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[.95] text-neutral-900 mb-2">Hi,  saya Aurelio Ramadhan</h1>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[.95] mb-6"><span class="text-neutral-400">Seorang</span><br><span id="typingText" class="text-neutral-900"></span><span class="terminal-cursor"></span></h1>
+        <p class="text-neutral-500 text-base md:text-lg max-w-md mb-10 leading-relaxed font-light">Informatics Management student & award-winning developer. Laravel • React • Java • Problem solver with 6+ competition wins.</p>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="#projects" class="inline-flex items-center gap-2 bg-neutral-900 text-white text-sm font-medium px-7 py-3.5 rounded-full hover:bg-neutral-800 transition-colors">Explore Work <iconify-icon icon="lucide:arrow-down-right" width="16"></iconify-icon></a>
+          <a href="#contact" class="inline-flex items-center gap-2 border border-neutral-200 text-neutral-700 text-sm font-medium px-7 py-3.5 rounded-full hover:border-neutral-300 hover:bg-neutral-50 transition-all"><iconify-icon icon="lucide:download" width="16"></iconify-icon> Resume</a>
+        </div>
+      </div>
+      <div class="fade-right flex justify-center md:justify-end">
+        <div class="profile-frame aspect-[4/5] w-full max-w-[320px] md:max-w-[380px] relative">
+          <img src="images/profile.png" alt="Aurelio Ramadhan">
+          <div class="profile-float-badge" style="top:20px;right:20px"><div class="w-9 h-9 rounded-full bg-neutral-900 flex items-center justify-center"><iconify-icon icon="lucide:code-2" width="16" class="text-white"></iconify-icon></div><div><div class="text-[12px] font-bold text-neutral-900">Aurelio R.</div><div class="text-[10px] text-neutral-400">Full-Stack Dev</div></div></div>
+          <div class="profile-float-badge" style="bottom:60px;left:20px"><iconify-icon icon="lucide:trophy" width="20" class="text-amber-500"></iconify-icon><div><div class="text-[12px] font-bold text-neutral-900">1st Winner</div><div class="text-[10px] text-neutral-400">UI/UX Competition</div></div></div>
+          <div class="profile-code-tag"><code class="text-white/80 text-[10px] font-mono">Laravel • React • Spring Boot • MySQL</code></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats with real data -->
+  <section class="py-20 px-6 border-y border-neutral-100 bg-neutral-50/50">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="stat-card scale-in"><div class="text-3xl md:text-4xl font-bold text-neutral-900 mb-1">8+</div><div class="text-[11px] text-neutral-400 font-medium uppercase">Prestasi & Awards</div></div>
+      <div class="stat-card scale-in"><div class="text-3xl md:text-4xl font-bold text-neutral-900 mb-1">12+</div><div class="text-[11px] text-neutral-400 font-medium uppercase">Projects</div></div>
+      <div class="stat-card scale-in"><div class="text-3xl md:text-4xl font-bold text-neutral-900 mb-1">6</div><div class="text-[11px] text-neutral-400 font-medium uppercase">Tech Stack</div></div>
+      <div class="stat-card scale-in"><div class="text-3xl md:text-4xl font-bold text-neutral-900 mb-1">3.50</div><div class="text-[11px] text-neutral-400 font-medium uppercase">GPA</div></div>
+    </div>
+  </section>
+
+  <!-- About + Summary -->
+  <section id="about" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-5 gap-16 items-center">
+      <div class="md:col-span-2 fade-left"><div class="relative"><div class="aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-100"><img src="images/profile_edit.png" alt="Aurelio" class="w-full h-full object-cover"></div><div class="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg px-5 py-3 flex items-center gap-3"><iconify-icon icon="lucide:graduation-cap" width="20" class="text-neutral-900"></iconify-icon><div><div class="text-sm font-bold text-neutral-900">Astra Scholar</div><div class="text-[10px] text-neutral-400">Informatics Management</div></div></div></div></div>
+      <div class="md:col-span-3 fade-right"><div class="section-label mb-4">About Me</div><h2 class="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 mb-6">Analytical & detail-oriented<br><span class="text-neutral-400">developer with competition mindset</span></h2>
+      <p class="text-neutral-500 leading-relaxed mb-5 font-light">Saya Aurelio Ramadhan, mahasiswa Manajemen Informatika dengan IPK 3.50, penerima beasiswa Astra. Berpengalaman dalam full-stack development, system analysis, dan UI/UX design — dari proyek industri seperti Sales Administration System hingga aplikasi mobile GPS attendance.</p>
+      <p class="text-neutral-500 leading-relaxed mb-8 font-light">Memenangkan berbagai kompetisi UI/UX tingkat nasional (Elektro Expo, UDINUS, HI-TECH 7) dan finalis Hackfest 2025. Saya percaya kode yang baik lahir dari pemahaman sistem yang mendalam.</p>
+      <div class="grid grid-cols-2 gap-4"><div class="flex items-center gap-3"><iconify-icon icon="lucide:map-pin" width="16" class="text-neutral-400"></iconify-icon><span class="text-sm text-neutral-600">South Tangerang, Banten</span></div><div class="flex items-center gap-3"><iconify-icon icon="lucide:mail" width="16" class="text-neutral-400"></iconify-icon><span class="text-sm text-neutral-600">aurelioramadhan04@gmail.com</span></div><div class="flex items-center gap-3"><iconify-icon icon="lucide:phone" width="16" class="text-neutral-400"></iconify-icon><span class="text-sm text-neutral-600">+62 896 3025 1965</span></div><div class="flex items-center gap-3"><iconify-icon icon="lucide:award" width="16" class="text-neutral-400"></iconify-icon><span class="text-sm text-neutral-600">Astra Scholarship</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section (mapped to real projects from CV) -->
+  <section id="projects" class="py-24 px-6 bg-neutral-50">
+    <div class="max-w-6xl mx-auto"><div class="text-center mb-16 fade-up"><div class="section-label mb-4">Portfolio</div><h2 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-900 mb-4">Featured Projects</h2><p class="text-neutral-400 max-w-lg mx-auto font-light">Klik untuk melihat detail teknis.</p></div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="project-card fade-up" onclick="openProject(0)"><div class="aspect-video overflow-hidden"><img src="https://picsum.photos/seed/laravel-sales/700/400.jpg" alt="Sales Admin System" class="project-img w-full h-full object-cover"></div><div class="p-7"><div class="flex justify-between mb-3"><span class="w-2 h-2 rounded-full bg-green-500"></span><span class="text-[11px] text-neutral-400 font-medium uppercase">Production</span><iconify-icon icon="lucide:arrow-up-right" width="18" class="text-neutral-400"></iconify-icon></div><h3 class="text-lg font-bold text-neutral-900 mb-2">Sales Administration & Production Checksheet</h3><p class="text-sm text-neutral-400 leading-relaxed mb-4">Sistem web Laravel + MySQL untuk administrasi penjualan dan quality control produksi di Yayasan Astra.</p><div class="flex flex-wrap gap-2"><span class="tech-tag">Laravel</span><span class="tech-tag">MySQL</span><span class="tech-tag">Tailwind</span></div></div></div>
+        <div class="project-card fade-up" onclick="openProject(1)"><div class="aspect-video overflow-hidden"><img src="https://picsum.photos/seed/tefa-auto/700/400.jpg" alt="TEFA Automotive" class="project-img w-full h-full object-cover"></div><div class="p-7"><div class="flex justify-between mb-3"><span class="w-2 h-2 rounded-full bg-amber-500"></span><span class="text-[11px] text-neutral-400 font-medium uppercase">Teaching Factory</span><iconify-icon icon="lucide:arrow-up-right" width="18" class="text-neutral-400"></iconify-icon></div><h3 class="text-lg font-bold text-neutral-900 mb-2">ASTRAtech TEFA — Service Management</h3><p class="text-sm text-neutral-400 leading-relaxed mb-4">Digitalisasi service order, work order, dan quotation untuk kegiatan praktik mahasiswa otomotif.</p><div class="flex flex-wrap gap-2"><span class="tech-tag">PHP</span><span class="tech-tag">CodeIgniter</span><span class="tech-tag">Bootstrap</span></div></div></div>
+        <div class="project-card fade-up" onclick="openProject(2)"><div class="aspect-video overflow-hidden"><img src="https://picsum.photos/seed/knowledge-sharing/700/400.jpg" alt="PKNOW Platform" class="project-img w-full h-full object-cover"></div><div class="p-7"><div class="flex justify-between mb-3"><span class="w-2 h-2 rounded-full bg-green-500"></span><span class="text-[11px] text-neutral-400 font-medium uppercase">Live</span><iconify-icon icon="lucide:arrow-up-right" width="18" class="text-neutral-400"></iconify-icon></div><h3 class="text-lg font-bold text-neutral-900 mb-2">PKNOW — Knowledge Sharing Platform</h3><p class="text-sm text-neutral-400 leading-relaxed mb-4">Platform React + ASP.NET dengan fitur quiz, upload file, dan REST API untuk kolaborasi belajar.</p><div class="flex flex-wrap gap-2"><span class="tech-tag">React</span><span class="tech-tag">ASP.NET</span><span class="tech-tag">SQL Server</span></div></div></div>
+        <div class="project-card fade-up" onclick="openProject(3)"><div class="aspect-video overflow-hidden"><img src="https://picsum.photos/seed/gps-attendance/700/400.jpg" alt="GPS Attendance" class="project-img w-full h-full object-cover"></div><div class="p-7"><div class="flex justify-between mb-3"><span class="w-2 h-2 rounded-full bg-green-500"></span><span class="text-[11px] text-neutral-400 font-medium uppercase">Android</span><iconify-icon icon="lucide:arrow-up-right" width="18" class="text-neutral-400"></iconify-icon></div><h3 class="text-lg font-bold text-neutral-900 mb-2">GPS Employee Attendance (Android)</h3><p class="text-sm text-neutral-400 leading-relaxed mb-4">Java + Kotlin, validasi radius lokasi mengurangi kecurangan absensi hingga 90%.</p><div class="flex flex-wrap gap-2"><span class="tech-tag">Java</span><span class="tech-tag">Kotlin</span><span class="tech-tag">SQLite</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL (Projects Data from CV) -->
+  <div id="projectModal" class="project-modal-overlay" onclick="closeProjectOverlay(event)"><div class="project-modal" onclick="event.stopPropagation()"><div class="modal-scroll"><div class="relative aspect-video"><img id="modalMainImg" class="w-full h-full object-cover"><button onclick="closeProject()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center"><iconify-icon icon="lucide:x" width="18"></iconify-icon></button></div><div id="modalGallery" class="flex gap-3 px-6 py-4 overflow-x-auto border-b"></div><div class="p-6 md:p-8"><h2 id="modalTitle" class="text-2xl font-bold"></h2><p id="modalSubtitle" class="text-sm text-neutral-400 mb-2"></p><p id="modalDesc" class="text-neutral-500 leading-relaxed mb-6"></p><div class="mb-6"><h3 class="text-xs font-semibold text-neutral-400 uppercase mb-2">Tech Stack</h3><div id="modalTech" class="flex flex-wrap gap-2"></div></div><div><h3 class="text-xs font-semibold text-neutral-400 uppercase mb-2">Key Features</h3><div id="modalFeatures"></div></div></div></div></div></div>
+
+  <!-- ACHIEVEMENTS (new data from CV) -->
+  <section id="prestasi" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto"><div class="text-center mb-16 fade-up"><div class="section-label mb-4 flex items-center justify-center gap-2"><iconify-icon icon="lucide:trophy" width="14" class="text-amber-500"></iconify-icon> Achievements</div><h2 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-900 mb-4">Pencapaian Kompetisi</h2><p class="text-neutral-400 max-w-lg mx-auto">UI/UX, Hackathon, Data Science — dari tingkat regional hingga nasional.</p></div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="achievement-card fade-up"><div class="aspect-video overflow-hidden relative"><img src="https://picsum.photos/seed/hitech7/600/340.jpg" class="w-full h-full object-cover"><div class="absolute top-4 right-4"><span class="rank-silver inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] font-bold"><iconify-icon icon="lucide:medal" width="13"></iconify-icon> Juara 2</span></div><div class="absolute bottom-3 left-4 text-white text-[11px] font-mono">Jun 2025</div></div><div class="p-6"><h3 class="font-bold">HI-TECH 7 — UI/UX Category</h3><p class="text-xs text-neutral-400 mb-2">Politeknik Caltex Riau</p><p class="text-sm text-neutral-500">Platform digital untuk pelestarian budaya & kolaborasi.</p></div></div>
+        <div class="achievement-card fade-up"><div class="aspect-video overflow-hidden relative"><img src="https://picsum.photos/seed/hackfest/600/340.jpg" class="w-full h-full object-cover"><div class="absolute top-4 right-4"><span class="rank-gold inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] font-bold"><iconify-icon icon="lucide:award" width="13"></iconify-icon> Finalis Top 4</span></div><div class="absolute bottom-3 left-4 text-white text-[11px] font-mono">Mar 2025</div></div><div class="p-6"><h3 class="font-bold">Hackfest UI/UX Competition 2025</h3><p class="text-xs text-neutral-400 mb-2">Surabaya — International Finalist</p><p class="text-sm text-neutral-500">Wellness app dengan mood tracking & community features.</p></div></div>
+        <div class="achievement-card fade-up"><div class="aspect-video overflow-hidden relative"><img src="images/juara_polines.jpg" class="w-full h-full object-cover"><div class="absolute top-4 right-4"><span class="rank-gold inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] font-bold"><iconify-icon icon="lucide:trophy" width="13"></iconify-icon> Juara 1</span></div><div class="absolute bottom-3 left-4 text-white text-[11px] font-mono">Sep 2024</div></div><div class="p-6"><h3 class="font-bold">Elektro Expo 2024 — UI/UX Mobile</h3><p class="text-xs text-neutral-400 mb-2">Politeknik Negeri Semarang</p><p class="text-sm text-neutral-500">Aplikasi manajemen proyek real-time tracking & kolaborasi tim.</p></div></div>
+        <div class="achievement-card fade-up"><div class="aspect-video overflow-hidden relative"><img src="images/juara_udinus.jpg" class="w-full h-full object-cover"><div class="absolute top-4 right-4"><span class="rank-gold inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] font-bold"><iconify-icon icon="lucite:trophy" width="13"></iconify-icon> Juara 1</span></div><div class="absolute bottom-3 left-4 text-white text-[11px] font-mono">Aug 2024</div></div><div class="p-6"><h3 class="font-bold">Mobile UI/UX Competition 2024</h3><p class="text-xs text-neutral-400 mb-2">Universitas Dian Nuswantoro</p><p class="text-sm text-neutral-500">Travel app dengan smart digital tour guide.</p></div></div>
+        <div class="achievement-card fade-up"><div class="aspect-video overflow-hidden relative"><img src="https://picsum.photos/seed/iconic/600/340.jpg" class="w-full h-full object-cover"><div class="absolute top-4 right-4"><span class="rank-bronze inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] font-bold"><iconify-icon icon="lucide:bar-chart" width="13"></iconify-icon> Top 10</span></div><div class="absolute bottom-3 left-4 text-white text-[11px] font-mono">Sep 2024</div></div><div class="p-6"><h3 class="font-bold">ICONIC IT — Data Science Competition</h3><p class="text-xs text-neutral-400 mb-2">Tasikmalaya</p><p class="text-sm text-neutral-500">Top 10 tim dengan solusi data-driven inovatif.</p></div></div>
+        <div class="achievement-card fade-up"><div class="aspect-video overflow-hidden relative"><img src="https://picsum.photos/seed/sitefest/600/340.jpg" class="w-full h-full object-cover"><div class="absolute top-4 right-4"><span class="rank-silver inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] font-bold"><iconify-icon icon="lucide:flag" width="13"></iconify-icon> Finalis Top 5</span></div><div class="absolute bottom-3 left-4 text-white text-[11px] font-mono">2024</div></div><div class="p-6"><h3 class="font-bold">SITEFEST UI/UX Design Competition</h3><p class="text-xs text-neutral-400 mb-2">Bali — National Finalist</p><p class="text-sm text-neutral-500">Solusi mobile UI/UX inovatif tingkat nasional.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience -->
+  <section id="experience" class="py-24 px-6 bg-neutral-50">
+    <div class="max-w-5xl mx-auto"><div class="text-center mb-12"><div class="section-label mb-4">Work Experience</div><h2 class="text-3xl font-bold">Professional Journey</h2></div>
+      <div class="space-y-8">
+        <div class="bg-white p-6 rounded-2xl border border-neutral-100 shadow-sm fade-up"><div class="flex flex-wrap justify-between items-start mb-3"><h3 class="text-xl font-bold text-neutral-900">Full Stack Developer Intern</h3><span class="text-sm font-mono text-neutral-400">Jan 2026 – Present</span></div><p class="text-neutral-600 font-medium mb-2">Yayasan Astra - Yayasan Dharma Bhakti Astra, North Jakarta</p><ul class="list-disc list-inside text-neutral-500 space-y-1"><li>Mengembangkan web-based Sales Administration & Production Checksheet System (Laravel + MySQL), meningkatkan efisiensi data processing.</li><li>Merancang arsitektur sistem, database schema, UI/UX mockups, dan spesifikasi fungsional.</li><li>Memastikan reliability melalui testing, debugging, dan optimasi performa.</li></ul></div>
+        <div class="bg-white p-6 rounded-2xl border border-neutral-100 shadow-sm fade-up"><div class="flex flex-wrap justify-between items-start mb-3"><h3 class="text-xl font-bold text-neutral-900">Web & Mobile Developer — PKNOW</h3><span class="text-sm font-mono text-neutral-400">Aug 2024 – Dec 2025</span></div><p class="text-neutral-600 font-medium mb-2">Astra Polytechnic Knowledge Platform</p><ul class="list-disc list-inside text-neutral-500 space-y-1"><li>Membangun platform knowledge-sharing dengan React, ASP.NET, SQL Server, meningkatkan aksesibilitas belajar.</li><li>Mengintegrasikan REST API untuk komunikasi frontend-backend seamless.</li><li>Implementasi quiz interaktif dan upload file, meningkatkan engagement pengguna.</li></ul></div>
+        <div class="bg-white p-6 rounded-2xl border border-neutral-100 shadow-sm fade-up"><div class="flex flex-wrap justify-between items-start mb-3"><h3 class="text-xl font-bold text-neutral-900">Android Developer — GPS Attendance</h3><span class="text-sm font-mono text-neutral-400">May 2025 – Aug 2025</span></div><ul class="list-disc list-inside text-neutral-500 space-y-1"><li>Aplikasi absensi berbasis GPS dengan Java, Kotlin, SQLite.</li><li>Validasi radius lokasi mengurangi kecurangan absensi hingga 90%.</li><li>Tracking otomatis waktu, lokasi, dan jarak untuk transparansi monitoring.</li></ul></div>
+      </div>
+      <div class="mt-12 p-6 bg-white rounded-2xl border"><h3 class="font-bold mb-2">Organization: BEM Astra Polytechnic</h3><p class="text-sm text-neutral-600">Head of Creative & Innovation (Feb 2025 – Feb 2026) — Mengelola strategi konten digital Instagram, TikTok, LinkedIn, dan meluncurkan website BEM resmi.</p></div>
+    </div>
+  </section>
+
+  <!-- Skills & Languages -->
+  <div class="glow-line max-w-5xl mx-auto"></div>
+  <section class="py-24 px-6"><div class="max-w-5xl mx-auto"><div class="grid md:grid-cols-2 gap-12"><div><h3 class="text-2xl font-bold mb-6">Core Expertise</h3><div class="space-y-3"><div><div class="flex justify-between text-sm"><span>Laravel / PHP</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill bg-neutral-900" data-width="90"></div></div></div><div><div class="flex justify-between text-sm"><span>React / Next.js</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill bg-neutral-900" data-width="85"></div></div></div><div><div class="flex justify-between text-sm"><span>Java (Spring Boot / Android)</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill bg-neutral-900" data-width="80"></div></div></div><div><div class="flex justify-between text-sm"><span>MySQL / SQL Server</span><span>88%</span></div><div class="skill-bar"><div class="skill-fill bg-neutral-900" data-width="88"></div></div></div></div></div><div><h3 class="text-2xl font-bold mb-6">Languages & Tools</h3><div class="flex flex-wrap gap-3"><span class="tech-tag">C#</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Kotlin</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">REST API</span><span class="tech-tag">Figma</span><span class="tech-tag">Git</span><span class="tech-tag">SDLC</span><span class="tech-tag">System Analysis</span></div><div class="mt-8"><h3 class="font-bold mb-2">Soft Skills</h3><div class="flex flex-wrap gap-2"><span class="text-sm bg-neutral-100 px-3 py-1 rounded-full">Problem Solving</span><span class="text-sm bg-neutral-100 px-3 py-1 rounded-full">Project Management</span><span class="text-sm bg-neutral-100 px-3 py-1 rounded-full">Team Collaboration</span><span class="text-sm bg-neutral-100 px-3 py-1 rounded-full">Attention to Detail</span></div></div></div></div></div></section>
+
+<!-- Skills -->
+  <section id="skills" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16 fade-up">
+        <div class="section-label mb-4">Tech Stack</div>
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-900 mb-4">Skills & Tools</h2>
+        <p class="text-neutral-400 max-w-lg mx-auto font-light">Bahasa pemrograman, framework, dan tools yang saya gunakan sehari-hari.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-x-16 gap-y-8 mb-16">
+        <div class="fade-up" style="transition-delay:0ms"><div class="flex justify-between mb-2"><span class="text-sm font-medium text-neutral-700">JavaScript / TypeScript</span><span class="text-sm font-mono text-neutral-400">90%</span></div><div class="skill-bar"><div class="skill-fill bg-neutral-900" data-width="90"></div></div></div>
+        <div class="fade-up" style="transition-delay:50ms"><div class="flex justify-between mb-2"><span class="text-sm font-medium text-neutral-700">Python</span><span class="text-sm font-mono text-neutral-400">85%</span></div><div class="skill-bar"><div class="skill-fill bg-neutral-900" data-width="85"></div></div></div>
+        <div class="fade-up" style="transition-delay:100ms"><div class="flex justify-between mb-2"><span class="text-sm font-medium text-neutral-700">React / Next.js</span><span class="text-sm font-mono text-neutral-400">88%</span></div><div class="skill-bar"><div class="skill-fill bg-neutral-900" data-width="88"></div></div></div>
+        <div class="fade-up" style="transition-delay:150ms"><div class="flex justify-between mb-2"><span class="text-sm font-medium text-neutral-700">Node.js / Express</span><span class="text-sm font-mono text-neutral-400">82%</span></div><div class="skill-bar"><div class="skill-fill bg-neutral-900" data-width="82"></div></div></div>
+        <div class="fade-up" style="transition-delay:200ms"><div class="flex justify-between mb-2"><span class="text-sm font-medium text-neutral-700">HTML / CSS / Tailwind</span><span class="text-sm font-mono text-neutral-400">95%</span></div><div class="skill-bar"><div class="skill-fill bg-neutral-900" data-width="95"></div></div></div>
+        <div class="fade-up" style="transition-delay:250ms"><div class="flex justify-between mb-2"><span class="text-sm font-medium text-neutral-700">Database (MySQL, MongoDB)</span><span class="text-sm font-mono text-neutral-400">78%</span></div><div class="skill-bar"><div class="skill-fill bg-neutral-900" data-width="78"></div></div></div>
+      </div>
+      <div class="flex flex-wrap justify-center gap-3 fade-up" style="transition-delay:300ms">
+        <div class="tech-tag">VS Code</div><div class="tech-tag">Git</div><div class="tech-tag">GitHub</div><div class="tech-tag">Figma</div><div class="tech-tag">Docker</div><div class="tech-tag">Postman</div><div class="tech-tag">Linux</div><div class="tech-tag">Vercel</div><div class="tech-tag">Firebase</div><div class="tech-tag">REST API</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line max-w-5xl mx-auto"></div>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 px-6 bg-neutral-50"><div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16"><div class="fade-left"><div class="section-label mb-4">Contact</div><h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Let's build<br><span class="text-neutral-400">something impactful.</span></h2><p class="text-neutral-400 mb-10">Tersedia untuk internship, kolaborasi proyek, atau diskusi tech & kompetisi.</p><div class="space-y-5"><a href="mailto:aurelioramadhan04@gmail.com" class="flex gap-4 group"><div class="w-11 h-11 rounded-xl bg-white border flex items-center justify-center"><iconify-icon icon="lucide:mail" width="18"></iconify-icon></div><div><div class="text-xs text-neutral-400">Email</div><div class="text-sm font-medium">aurelioramadhan04@gmail.com</div></div></a><a href="#" class="flex gap-4"><div class="w-11 h-11 rounded-xl bg-white border flex items-center justify-center"><iconify-icon icon="lucide:phone" width="18"></iconify-icon></div><div><div class="text-xs text-neutral-400">Phone</div><div class="text-sm font-medium">+62 896 3025 1965</div></div></a><a href="#" class="flex gap-4"><div class="w-11 h-11 rounded-xl bg-white border flex items-center justify-center"><iconify-icon icon="lucide:linkedin" width="18"></iconify-icon></div><div><div class="text-xs text-neutral-400">LinkedIn</div><div class="text-sm font-medium">Aurelio Ramadhan</div></div></a></div></div><div class="fade-right"><form id="contactForm" class="bg-white rounded-2xl border p-8 space-y-5"><div><label class="text-xs font-medium uppercase">Nama</label><input type="text" class="w-full bg-neutral-50 border rounded-xl px-4 py-3"></div><div><label class="text-xs font-medium uppercase">Email</label><input type="email" class="w-full bg-neutral-50 border rounded-xl px-4 py-3"></div><div><label class="text-xs font-medium uppercase">Pesan</label><textarea rows="4" class="w-full bg-neutral-50 border rounded-xl px-4 py-3"></textarea></div><button type="submit" class="w-full bg-neutral-900 text-white py-3 rounded-xl flex items-center justify-center gap-2">Send Message <iconify-icon icon="lucide:send" width="15"></iconify-icon></button><div id="formMessage" class="hidden text-sm text-center py-2 text-green-700"></div></form></div></div></section>
+
+  <footer class="py-10 px-6 border-t"><div class="max-w-5xl mx-auto flex justify-between items-center flex-wrap gap-4"><div class="text-neutral-400 text-sm">© 2025 Aurelio Ramadhan — Full-Stack Developer & Achiever</div><div class="flex gap-4"><a href="#" class="text-neutral-300 hover:text-neutral-600"><iconify-icon icon="lucide:github" width="18"></iconify-icon></a><a href="#" class="text-neutral-300 hover:text-neutral-600"><iconify-icon icon="lucide:linkedin" width="18"></iconify-icon></a></div></div></footer>
+
+  <script>
+    const projectsData = [
+      {title:"Sales Administration System",subtitle:"Laravel + MySQL",desc:"Mengembangkan web-based Sales Administration and Production Checksheet System untuk Yayasan Astra. Meningkatkan efisiensi pemrosesan data, merancang database dan UI/UX.",tech:["Laravel","MySQL","Tailwind","JavaScript"],features:["Manajemen data penjualan real-time","Checksheet produksi digital","Role-based access","Laporan otomatis"],images:["https://picsum.photos/seed/sales1/900/500","https://picsum.photos/seed/sales2/900/500"]},
+      {title:"ASTRAtech TEFA Service Management",subtitle:"Digitalisasi Bengkel",desc:"Aplikasi untuk mengelola service order, work order, dan quotation di Teaching Factory otomotif. Memudahkan pencatatan praktik mahasiswa.",tech:["PHP","CodeIgniter","MySQL","Bootstrap"],features:["Work order generation","Quotation & invoicing","Tracking perbaikan","Export laporan"],images:["https://picsum.photos/seed/tefa1/900/500"]},
+      {title:"PKNOW Knowledge Platform",subtitle:"React + ASP.NET",desc:"Platform berbagi pengetahuan untuk lingkungan kampus, mendukung quiz, file sharing, dan kolaborasi antar mahasiswa.",tech:["React","ASP.NET","SQL Server","REST API"],features:["Upload materi & tugas","Kuis interaktif","Forum diskusi","API terintegrasi"],images:["https://picsum.photos/seed/pknow1/900/500","https://picsum.photos/seed/pknow2/900/500"]},
+      {title:"GPS Employee Attendance (Android)",subtitle:"Java & Kotlin",desc:"Sistem absensi berbasis GPS dengan validasi radius, mengurangi fraud absensi hingga 90% serta tracking lokasi otomatis.",tech:["Java","Kotlin","SQLite","Google Maps API"],features:["Validasi radius GPS","Riwayat absensi","Export data lokasi","Notifikasi realtime"],images:["https://picsum.photos/seed/gps1/900/500"]}
+    ];
+    function openProject(i){let p=projectsData[i];document.getElementById('modalMainImg').src=p.images[0];document.getElementById('modalTitle').innerText=p.title;document.getElementById('modalSubtitle').innerText=p.subtitle;document.getElementById('modalDesc').innerText=p.desc;document.getElementById('modalTech').innerHTML=p.tech.map(t=>`<span class="tech-tag">${t}</span>`).join('');document.getElementById('modalFeatures').innerHTML=p.features.map(f=>`<div class="feature-check"><div class="w-5 h-5 rounded-full bg-neutral-100 flex items-center justify-center"><iconify-icon icon="lucide:check" width="11"></iconify-icon></div><p class="text-sm text-neutral-600">${f}</p></div>`).join('');document.getElementById('projectModal').classList.add('active');document.body.style.overflow='hidden';}
+    function closeProject(){document.getElementById('projectModal').classList.remove('active');document.body.style.overflow='';}
+    function closeProjectOverlay(e){if(e.target===e.currentTarget)closeProject();}
+    document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeProject();});
+    const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');e.target.querySelectorAll('.skill-fill').forEach(b=>{b.style.width=b.dataset.width+'%';});}});},{threshold:0.1});document.querySelectorAll('.fade-up, .fade-left, .fade-right, .scale-in').forEach(el=>observer.observe(el));
+    const words=['Developer.','UI/UX Designer.','Problem Solver.'];let wordIndex=0,charIndex=0,isDeleting=false;const typingEl=document.getElementById('typingText');function typeEffect(){const current=words[wordIndex];typingEl.textContent=current.substring(0,charIndex);if(!isDeleting&&charIndex<current.length){charIndex++;setTimeout(typeEffect,80);}else if(!isDeleting&&charIndex===current.length){setTimeout(()=>{isDeleting=true;typeEffect();},2000);}else if(isDeleting&&charIndex>0){charIndex--;setTimeout(typeEffect,40);}else{isDeleting=false;wordIndex=(wordIndex+1)%words.length;setTimeout(typeEffect,500);}}typeEffect();
+    document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('active'));document.getElementById('closeMenu').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('active'));window.closeMobile=()=>document.getElementById('mobileMenu').classList.remove('active');
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});}));
+    document.getElementById('contactForm').addEventListener('submit',function(e){e.preventDefault();const msg=document.getElementById('formMessage');msg.className='text-sm text-center py-3 rounded-lg bg-green-50 text-green-700 font-medium';msg.textContent='✓ Pesan terkirim! Saya akan membalas segera.';msg.classList.remove('hidden');this.reset();setTimeout(()=>msg.classList.add('hidden'),5000);});
+  </script>
+</body>
+</html>
