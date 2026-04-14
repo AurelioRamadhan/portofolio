@@ -15,7 +15,6 @@
     ::-webkit-scrollbar-track { background: #f5f5f5; }
     ::-webkit-scrollbar-thumb { background: #d4d4d4; border-radius: 10px; }
 
-    /* enhanced animations */
     .fade-up, .fade-left, .fade-right, .scale-in, .blur-in {
       opacity: 0;
       transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
@@ -157,32 +156,31 @@
   </div>
 
   <!-- Hero Section -->
-  <section class="min-h-screen flex items-center relative px-6 overflow-hidden pt-20">
-    <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(#e8e8e8 1px, transparent 1px); background-size: 34px 34px; opacity: 0.5;"></div>
-    <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+   <!-- Hero -->
+  <section class="min-h-screen flex items-center relative px-6 overflow-hidden">
+    <div class="absolute inset-0" style="background-image:radial-gradient(#f0f0f0 1px,transparent 1px);background-size:32px 32px;opacity:.6"></div>
+    <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center relative z-10">
       <div class="fade-up">
-        <div class="section-label mb-5"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Available for opportunities</div>
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-neutral-900">Hi, Saya Aurelio Ramadhan</h1>
-        <div class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mt-3 mb-5">
-          <span class="text-neutral-400">Seorang</span><br>
-          <span id="typingText" class="text-neutral-900 inline-block"></span><span class="terminal-cursor"></span>
-        </div>
-        <p class="text-neutral-500 text-base md:text-lg max-w-md mb-9 leading-relaxed font-light">I build accessible, scalable web & mobile experiences that merge design thinking with clean engineering.</p>
-        <div class="flex flex-wrap gap-4">
-          <a href="#projects" class="inline-flex items-center gap-2 bg-neutral-900 text-white text-sm font-medium px-7 py-3.5 rounded-full hover:bg-neutral-800 transition-all shadow-sm">Explore Work <iconify-icon icon="lucide:arrow-down-right" width="16"></iconify-icon></a>
-          <a href="#contact" class="inline-flex items-center gap-2 border border-neutral-200 text-neutral-700 text-sm font-medium px-7 py-3.5 rounded-full hover:border-neutral-400 hover:bg-neutral-50 transition-all"><iconify-icon icon="lucide:download" width="16"></iconify-icon> Resume</a>
+        <div class="section-label mb-6 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>Available for opportunities</div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[.95] text-neutral-900 mb-2">Hi, I'm Aurelio Ramadhan</h1>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[.95] mb-6"><span class="text-neutral-400">a</span><br><span id="typingText" class="text-neutral-900"></span><span class="terminal-cursor"></span></h1>
+        <p class="text-neutral-500 text-base md:text-lg max-w-md mb-10 leading-relaxed font-light">I build accessible, scalable web and mobile experiences that bridge design and engineering.</p>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="#projects" class="inline-flex items-center gap-2 bg-neutral-900 text-white text-sm font-medium px-7 py-3.5 rounded-full hover:bg-neutral-800 transition-colors">Explore Work <iconify-icon icon="lucide:arrow-down-right" width="16"></iconify-icon></a>
+          <a href="#contact" class="inline-flex items-center gap-2 border border-neutral-200 text-neutral-700 text-sm font-medium px-7 py-3.5 rounded-full hover:border-neutral-300 hover:bg-neutral-50 transition-all"><iconify-icon icon="lucide:download" width="16"></iconify-icon> Resume</a>
         </div>
       </div>
       <div class="fade-right flex justify-center md:justify-end">
-        <div class="profile-frame w-full max-w-[340px] md:max-w-[380px] aspect-[4/5]">
-          <img src="images/profile.png" alt="Aurelio Ramadhan" class="w-full h-full object-cover">
-          <div class="profile-float-badge top-5 right-5"><div class="w-9 h-9 rounded-full bg-neutral-900 flex items-center justify-center"><iconify-icon icon="lucide:code-2" width="16" class="text-white"></iconify-icon></div><div><div class="text-[12px] font-bold text-neutral-900">Aurelio R.</div><div class="text-[10px] text-neutral-500">Full-Stack Dev</div></div></div>
-          <div class="profile-float-badge bottom-20 left-5"><iconify-icon icon="lucide:award" width="18" class="text-amber-600"></iconify-icon><div><div class="text-[12px] font-bold text-neutral-900">Awardee</div><div class="text-[10px] text-neutral-500">Astra Scholarship</div></div></div>
-          <div class="profile-code-tag"><code class="text-white/85 text-[10px] font-mono tracking-wide">Developer • UI/UX • System Analyst</code></div>
+        <div class="profile-frame aspect-[4/5] w-full max-w-[320px] md:max-w-[380px] relative">
+          <img src="images/profile.png" alt="Aurelio Ramadhan">
+          <div class="profile-float-badge" style="top:20px;right:20px"><div class="w-9 h-9 rounded-full bg-neutral-900 flex items-center justify-center"><iconify-icon icon="lucide:code-2" width="16" class="text-white"></iconify-icon></div><div><div class="text-[12px] font-bold text-neutral-900">Aurelio R.</div><div class="text-[10px] text-neutral-400">Full-Stack Dev</div></div></div>
+          <div class="profile-float-badge" style="bottom:60px;left:20px"><iconify-icon icon="lucide:award" width="20" class="text-amber-500"></iconify-icon><div><div class="text-[12px] font-bold text-neutral-900">Awardee</div><div class="text-[10px] text-neutral-400">Astra Scholarship.</div></div></div>
+          <div class="profile-code-tag"><code class="text-white/80 text-[10px] font-mono">Developer • UI/UX Design • System Analyst</code></div>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- Stats -->
   <section class="py-16 px-6 border-y border-neutral-100 bg-neutral-50/40">
@@ -199,7 +197,7 @@
       <div class="md:col-span-2 fade-left"><div class="relative"><div class="aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-100 shadow-md"><img src="images/profile_edit.png" alt="Aurelio studio" class="w-full h-full object-cover"></div><div class="absolute -bottom-5 -right-4 bg-white rounded-xl shadow-lg px-5 py-3 flex items-center gap-3 border"><iconify-icon icon="lucide:graduation-cap" width="20" class="text-neutral-800"></iconify-icon><div><div class="text-sm font-bold text-neutral-900">Astra Polytechnic</div><div class="text-[10px] text-neutral-500">Informatics Management</div></div></div></div></div>
       <div class="md:col-span-3 fade-right"><div class="section-label mb-4">About</div><h2 class="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 mb-5">Building systems that are <span class="text-neutral-400">scalable and human-centered</span></h2>
       <p class="text-neutral-500 leading-relaxed mb-5 font-light">I'm an Informatics Management student at Astra Polytechnic (GPA 3.50/4.00) as an Astra Scholar. Specializing in full-stack, system analysis & UI/UX — I blend technical precision with empathy for end‑users.</p>
-      <p class="text-neutral-500 leading-relaxed mb-8 font-light">Winner of Mobile UI/UX Competition 2024, UI/UX Elektro Expo 2024, HI-TECH 7 UI/UX, and Top 4 at Hackfest UI/UX International 2025. My work thrives at the intersection of clean code and meaningful interactions.</p>
+      <p class="text-neutral-500 leading-relaxed mb-8 font-light">Winner of Mobile UI/UX Competition 2024, Elektro Expo 2024, HI-TECH 7 UI/UX Category, and Top 4 at Hackfest UI/UX International 2025. My work thrives at the intersection of clean code and meaningful interactions.</p>
       <div class="grid grid-cols-2 gap-5"><div class="flex items-center gap-3"><iconify-icon icon="lucide:map-pin" width="16" class="text-neutral-400"></iconify-icon><span class="text-sm text-neutral-600">South Tangerang, Banten</span></div><div class="flex items-center gap-3"><iconify-icon icon="lucide:mail" width="16" class="text-neutral-400"></iconify-icon><span class="text-sm text-neutral-600">aurelioramadhan1104@gmail.com</span></div><div class="flex items-center gap-3"><iconify-icon icon="lucide:phone" width="16" class="text-neutral-400"></iconify-icon><span class="text-sm text-neutral-600">+62 896 3025 1965</span></div><div class="flex items-center gap-3"><iconify-icon icon="lucide:award" width="16" class="text-neutral-400"></iconify-icon><span class="text-sm text-neutral-600">Astra Scholarship</span></div></div>
       </div>
     </div>
@@ -207,7 +205,7 @@
 
   <!-- Projects -->
   <section id="projects" class="py-28 px-6 bg-neutral-50">
-    <div class="max-w-6xl mx-auto"><div class="text-center mb-16 fade-up"><div class="section-label justify-center mb-4">PORTFOLIO</div><h2 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-900 mb-4">Things I've built</h2><p class="text-neutral-400 max-w-lg mx-auto font-light">From internal enterprise tools to consumer apps — solving real problems with code.</p></div>
+    <div class="max-w-6xl mx-auto"><div class="text-center mb-16 fade-up"><div class="section-label justify-center mb-4">PORTFOLIO</div><h2 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-900 mb-4">Things I've built</h2><p class="text-neutral-400 max-w-lg mx-auto font-light">From internal enterprise tools to consumer apps.</p></div>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="project-card fade-up" onclick="openProject(0)"><div class="aspect-video overflow-hidden"><img src="images/cover_zis.png" alt="sales system" class="project-img w-full h-full object-cover"></div><div class="p-7"><div class="flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-green-500"></span><span class="text-[11px] font-mono text-neutral-500">Production</span></div><h3 class="text-xl font-bold text-neutral-900 mb-2">Sales Admin & Production Checksheet</h3><p class="text-sm text-neutral-500 mb-4">Laravel-based internal platform for Yayasan Astra that streamlined quality control & sales data.</p><div class="flex flex-wrap gap-2"><span class="tech-tag">Laravel</span><span class="tech-tag">MySQL</span><span class="tech-tag">Tailwind</span></div></div></div>
         <div class="project-card fade-up" onclick="openProject(1)"><div class="aspect-video overflow-hidden"><video src="videos/video_tefa.mp4" class="project-video-preview w-full h-full object-cover" autoplay loop muted playsinline></video></div><div class="p-7"><h3 class="text-xl font-bold text-neutral-900 mb-2">ASTRAtech TEFA Service Management</h3><p class="text-sm text-neutral-500 mb-4">Digital workshop platform for service orders, work orders & quotations used by automotive students.</p><div class="flex flex-wrap gap-2"><span class="tech-tag">React</span><span class="tech-tag">ASP.NET</span><span class="tech-tag">SQL Server</span></div></div></div>
@@ -329,42 +327,42 @@
   </section>
 
   <!-- Contact -->
- <section id="contact" class="py-28 px-6 bg-neutral-50">
-  <div class="max-w-3xl mx-auto">
+<section id="contact" class="py-28 px-6 bg-neutral-50">
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-14">
     
-    <div class="fade-up text-center mb-12">
-      <div class="section-label justify-center mb-4">Contact</div>
+    <!-- LEFT SIDE (tetap) -->
+    <div class="fade-left">
+      <div class="section-label mb-4">Contact</div>
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
         Let's build something <span class="text-neutral-400">impactful.</span>
       </h2>
-      <p class="text-neutral-400">
+      <p class="text-neutral-400 mb-10">
         Open for internships, collabs, or just a tech chat.
       </p>
-    </div>
 
-    <div class="space-y-6 fade-up">
-      
-      <a href="mailto:aurelioramadhan1104@gmail.com" class="flex items-center gap-4 group justify-center">
-        <div class="w-11 h-11 rounded-xl bg-white border flex items-center justify-center">
-          <iconify-icon icon="lucide:mail" width="18"></iconify-icon>
-        </div>
-        <div>
-          <div class="text-xs text-neutral-400">Email</div>
-          <div class="text-sm font-medium">aurelioramadhan1104@gmail.com</div>
-        </div>
-      </a>
+      <div class="space-y-6">
+        <a href="mailto:aurelioramadhan1104@gmail.com" class="flex gap-4 group">
+          <div class="w-11 h-11 rounded-xl bg-white border flex items-center justify-center">
+            <iconify-icon icon="lucide:mail" width="18"></iconify-icon>
+          </div>
+          <div>
+            <div class="text-xs text-neutral-400">Email</div>
+            <div class="text-sm font-medium">aurelioramadhan1104@gmail.com</div>
+          </div>
+        </a>
 
-      <div class="flex items-center gap-4 justify-center">
-        <div class="w-11 h-11 rounded-xl bg-white border flex items-center justify-center">
-          <iconify-icon icon="lucide:phone" width="18"></iconify-icon>
-        </div>
-        <div>
-          <div class="text-xs text-neutral-400">Phone</div>
-          <div class="text-sm font-medium">+62 896 3025 1965</div>
-        </div>
+        <a href="#" class="flex gap-4">
+          <div class="w-11 h-11 rounded-xl bg-white border flex items-center justify-center">
+            <iconify-icon icon="lucide:phone" width="18"></iconify-icon>
+          </div>
+          <div>
+            <div class="text-xs text-neutral-400">Phone</div>
+            <div class="text-sm font-medium">+62 896 3025 1965</div>
+          </div>
+        </a>
       </div>
-
     </div>
+    <div class="fade-right"></div>
 
   </div>
 </section>
